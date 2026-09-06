@@ -1,1 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#header-section {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+}
