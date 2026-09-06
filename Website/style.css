@@ -39,7 +39,7 @@
     color: #030202;
 }
 
-#navbar li a.active ::after {
+#navbar li a.active::after {
     content: '';
     width: 30%;
     height: 2px;
