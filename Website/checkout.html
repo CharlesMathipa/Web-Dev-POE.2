@@ -1,0 +1,87 @@
+<!--//Secure Checkout & Payment-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always & Forever Blooms - Checkout</title>
+</head>
+
+<body>
+
+  <!-- Minimal Header (Distraction-Free) -->
+  <header>
+    <strong>Always & Forever Blooms</strong>
+    <span>256-Bit SSL Encrypted Checkout</span>
+  </header>
+
+  <main>
+    <h1>Secure Checkout</h1>
+
+    <!-- Final Order Review -->
+    <section>
+      <h2>Final Payment Summary</h2>
+      <p>Recipient: <strong>Sarah Mathipa</strong> (Sandton, Gauteng)</p>
+      <p>Target Date: <strong>14 February 2026</strong></p>
+      <p><strong>Total Amount Due: R 2,220</strong></p>
+    </section>
+
+    <hr>
+
+    <!-- Payment Option Selection -->
+    <section>
+      <h2>Select Payment Method</h2>
+
+      <form action="Homepage.html" method="get">
+        <fieldset>
+          <legend>Available Local Gateways:</legend>
+
+          <label>
+            <input type="radio" name="payment_method" value="instant_eft" checked>
+            <strong>Instant EFT (Ozow / Capitec Pay)</strong> — Zero card fees, instant approval
+          </label><br><br>
+
+          <label>
+            <input type="radio" name="payment_method" value="card">
+            <strong>Credit / Debit Card (PayFast / Yoco)</strong> — Visa & Mastercard
+          </label><br><br>
+
+          <label>
+            <input type="radio" name="payment_method" value="snapscan">
+            <strong>SnapScan / Apple Pay</strong> — Fast 1-tap mobile checkout
+          </label>
+        </fieldset>
+
+        <br>
+
+        <!-- Card Input Mockup Block -->
+        <fieldset>
+          <legend>Card Payment Details:</legend>
+
+          <label for="card-num">Card Number:</label><br>
+          <input type="text" id="card-num" name="card_number" placeholder="4532 •••• •••• ••••"><br><br>
+
+          <label for="card-exp">Expiry Date:</label>
+          <input type="text" id="card-exp" name="card_expiry" placeholder="MM/YY">
+
+          <label for="card-cvv">CVV:</label>
+          <input type="password" id="card-cvv" name="card_cvv" placeholder="123" size="4"><br>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Pay R 2,220 Securely</button>
+      </form>
+    </section>
+
+    <br>
+    <p><a href="cart.html">&laquo; Return to Delivery & Recipient Details</a></p>
+  </main>
+
+  <footer>
+    <p>Security Guaranteed | PCI-DSS Compliant Payment Gateway</p>
+  </footer>
+
+</body>
+
+</html>

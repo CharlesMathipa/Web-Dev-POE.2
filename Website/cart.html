@@ -1,0 +1,76 @@
+<!---Express Cart & Recipient Details --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always & Forever Blooms - Cart</title>
+</head>
+
+<body>
+  <a href="Homepage.html">
+    <img src="images/logo.jpeg" alt="Always and Forever Blooms Logo" class="logo"  width="600" height="400"   > 
+  </a>
+    <!--global navigation bar-->
+<header>
+    <nav>
+      <table>
+            <tr>
+                <th><a href="Homepage.html">Home</a></th>
+                <th><a href="reviews.html">Reviews</a></th>
+                <th><a href="faq.html">FAQ</a></th>
+                <th><a href="cart.html">Cart</a></th>
+            </tr>
+        </table>
+    </nav>
+</header>
+</body>
+<main>
+    <form action="checkout.html" method="POST">
+  <h2>Step 1: Recipient Details </h2>
+  
+  <label for="recip-name">Recipient Full Name:</label><br>
+  <input type="text" id="recip-name" name="recipient_name" required><br><br>
+
+  <label for="recip-phone">Recipient Mobile Phone (For Driver):</label><br>
+  <input type="tel" id="recip-phone" name="recipient_phone" required><br><br>
+
+  <label for="recip-address">Delivery Street Address:</label><br>
+  <textarea id="recip-address" name="recipient_address" rows="3" required></textarea><br><br>
+
+  <h2>Step 2: Personalized Gift Card Note</h2>
+  <label for="card-note">Write your card message (Max 250 characters):</label><br>
+  <textarea id="card-note" name="card_note" maxlength="250" rows="4"></textarea><br>
+  <label><input type="checkbox" name="anonymous_sender"> Keep my name anonymous on the card</label><br><br>
+
+  <h2>Step 3: Buyer Details</h2>
+  <label for="buyer-email">Your Email Address:</label><br>
+  <input type="email" id="buyer-email" name="buyer_email" required><br><br>
+
+  <button type="submit">Proceed to Secure Payment</button>
+</form>
+</main>
+
+<footer>
+    <section>
+      <h3>Always & Forever Blooms</h3>
+      <p>Luxury floral arrangements delivered nationwide.</p>
+    </section>
+    <section>
+      <h3>Customer Care</h3>
+      <ul>
+        <li><a href="faq.html">Delivery Info & FAQ</a></li>
+        <li><a href="faq.html#care">Flower Care Guide</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="reviews.html">Real Photo Gallery</a></li>
+        <li><a href="cart.html">View Cart</a></li>
+      </ul>
+    </section>
+    <p>&copy; 2026 Always & Forever Blooms. All rights reserved.</p>
+  </footer>
+
+</html>

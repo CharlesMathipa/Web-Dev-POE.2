@@ -1,0 +1,135 @@
+<!---//product details page-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always & Forever Blooms - Product Details</title>
+</head>
+
+<body>
+  <a href="Homepage.html">
+    <img src="images/logo.jpeg" alt="Always and Forever Blooms Logo" class="logo"  width="600" height="400"  > 
+  </a>
+    <!--global navigation bar-->
+<header>
+    <nav>
+      <table>
+            <tr>
+                <th><a href="Homepage.html">Home</a></th>
+                <th><a href="reviews.html">Reviews</a></th>
+                <th><a href="faq.html">FAQ</a></th>
+                <th><a href="cart.html">Cart</a></th>
+            </tr>
+        </table>
+    </nav>
+</header>
+</body>
+
+<main>
+    <!-- Mini Navigation -->
+    <nav aria-label="Breadcrumb">
+      <p><a href="menu.html">&laquo; Back to Rose Bouquet Menu</a></p>
+    </nav>
+
+    <!-- Product Configuration Section -->
+    <section>
+      <!-- Media Gallery -->
+      <figure>
+        <img src="images/roses.jpeg" alt="Red Rose Assorted Bouquet Main View" width="310" height="200">
+        <figcaption>
+          <img src="images/rednwhiteroses.jpeg" alt="Thumbnail 1" width="100" height="100">
+          <img src="images/roses.jpeg" alt="Thumbnail 2" width="100" height="100">
+          <img src="images/whiteroses.jpeg" alt="Thumbnail 3" width="100" height="100">
+        </figcaption>
+      </figure>
+
+      <!-- Product Buy Box & Options -->
+      <article>
+        <h1>Red Rose Assorted Bouquet</h1>
+        <p><a href="reviews.html">★★★★★ 4.9 (62 Verified Customer Reviews)</a></p>
+        <p><strong>Price: R 1,100</strong> <em>(Updates based on stem selection)</em></p>
+
+        <form action="cart.html" method="POST">
+          <!-- 1. Stem Count Selector -->
+          <fieldset>
+            <legend>1. Select Stem Count:</legend>
+            <label><input type="radio" name="stem_count" value="20" checked> 20 Stems — R 1,100</label><br>
+            <label><input type="radio" name="stem_count" value="40"> 40 Stems — R 1,900</label><br>
+            <label><input type="radio" name="stem_count" value="60"> 60 Stems — R 2,700</label><br>
+            <label><input type="radio" name="stem_count" value="80"> 80 Stems — R 3,500</label><br>
+            <label><input type="radio" name="stem_count" value="100"> 100 Stems — R 4,600</label>
+          </fieldset>
+
+          <br>
+
+          <!-- 2. Add-Ons -->
+          <fieldset>
+            <legend>2. Optional Add-Ons:</legend>
+            <label><input type="checkbox" name="addon_gypsophila" value="200"> Add Gypsophila / Baby's Breath (+R200 per 20 stems)</label><br>
+            <label><input type="checkbox" name="addon_vase" value="150"> Add Clear Glass Vase (+R150)</label><br>
+            <label><input type="checkbox" name="addon_chocolates" value="120"> Add Premium Chocolates (+R120)</label>
+          </fieldset>
+
+          <br>
+
+          <!-- 3. Delivery Date Calendar -->
+          <fieldset>
+            <legend>3. Select Delivery Date:</legend>
+            <label for="delivery-date">Target Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery_date" required>
+            <p><small>Order within 1 hour for same-day delivery option.</small></p>
+          </fieldset>
+
+          <br>
+
+          <!-- Actions -->
+          <button type="submit">Add To Cart — R 1,100</button>
+          <a href="checkout.html"><button type="button">Buy Now (Instant EFT / Express)</button></a>
+        </form>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- Details & Recipe -->
+    <section>
+      <h2>Bouquet Details & Flower Care</h2>
+      <details open>
+        <summary>Arrangement Recipe</summary>
+        <p>Freshly cut long-stem red roses arranged with seasonal green foliage in our signature luxury wrap.</p>
+      </details>
+      <details>
+        <summary>Flower Care Instructions</summary>
+        <p>Trim 2cm off stems at a 45-degree angle before placing in clean water. Keep away from direct sunlight.</p>
+      </details>
+      <details>
+        <summary>Delivery Guarantee</summary>
+        <p>Delivered in a hydration pack to ensure freshness upon arrival.</p>
+      </details>
+    </section>
+  </main>
+
+<footer>
+    <section>
+      <h3>Always & Forever Blooms</h3>
+      <p>Luxury floral arrangements delivered nationwide.</p>
+    </section>
+    <section>
+      <h3>Customer Care</h3>
+      <ul>
+        <li><a href="faq.html">Delivery Info & FAQ</a></li>
+        <li><a href="faq.html">Flower Care Guide</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="reviews.html">Real Photo Gallery</a></li>
+        <li><a href="cart.html">View Cart</a></li>
+      </ul>
+    </section>
+    <p>&copy; 2026 Always & Forever Blooms. All rights reserved.</p>
+  </footer>
+
+</html>

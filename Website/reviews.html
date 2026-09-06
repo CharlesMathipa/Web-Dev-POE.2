@@ -1,0 +1,110 @@
+<!---//Customer Reviews & Real Photo Gallery--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always & Forever Blooms - Reviews</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <a href="Homepage.html">
+    <img src="images/logo.jpeg" alt="Always and Forever Blooms Logo" class="logo"  width="600" height="400"  > 
+  </a>
+    <!--global navigation bar-->
+<header>
+    <nav>
+      <table>
+            <tr>
+                <th><a href="Homepage.html">Home</a></th>
+                <th><a href="reviews.html">Reviews</a></th>
+                <th><a href="faq.html">FAQ</a></th>
+                <th><a href="cart.html">Cart</a></th>
+            </tr>
+        </table>
+    </nav>
+</header>
+</body>
+
+<main>
+    <h1>Real Customer Moments & Delivered Bouquets</h1>
+    <p>Explore unedited photos submitted by real customers across South Africa.</p>
+
+    <!-- Size Filters -->
+    <nav aria-label="Gallery Filters">
+      <p>Filter by arrangement size:</p>
+      <ul>
+        <li><a href="#all"><strong>All Photos</strong></a></li>
+        <li><a href="#40-stems">40 Stems</a></li>
+        <li><a href="#60-stems">60 Stems</a></li>
+        <li><a href="#100-stems">100 Stems</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <!-- Photo Reviews Grid -->
+    <section>
+      <h2>Verified Buyer Photos</h2>
+
+      <!-- review 1 -->
+      <article>
+        <img src="images/whiteroses.jpeg" alt="100 White Roses Delivered" width="350" height="200">
+        <h3>★★★★★ "Mindblown by how huge this was!"</h3>
+        <p><em>"The 100-stem white rose bouquet arrived exactly on time for our anniversary in Pretoria East."</em></p>
+        <p><strong>- Thabo K.</strong> (Verified Buyer — 100 Stems White Roses)</p>
+        <p><a href="product=whiteroses.html"><button type="button">Order This Setup (100 Stems)</button></a></p>
+      </article>
+
+      <br>
+
+      <!-- review 2 -->
+      <article>
+        <img src="images/pinkroses.jpeg" alt="40 White Roses Arrangement" width="350" height="200">
+        <h3>★★★★★ "Super fresh and smelled amazing"</h3>
+        <p><em>"Ordered the 40-stem pink arrangement with Gypsophila add-on. Packaging was incredible."</em></p>
+        <p><strong>- Chuma M.</strong> (Verified Buyer — Sandton)</p>
+        <p><a href="product=pinkroses.html"><button type="button">Order This Setup (40 Stems)</button></a></p>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- buyer Review Submission Form -->
+    <section>
+      <h2>Received or Purchased Flowers Recently? Leave a Review</h2>
+
+      <form action="reviews.html" method="post" enctype="multipart/form-data">
+        <label for="reviewer-name">Your Name:</label><br>
+        <input type="text" id="reviewer-name" name="reviewer_name" required><br><br>
+
+        <label for="rating">Rating:</label><br>
+        <select id="rating" name="rating">
+             <option value="5">★★★★★ (5/5 Excellent)</option>
+            <option value="4">★★★★☆ (4/5 Very Good)</option>
+            <option value="3">★★★☆☆ (3/5 Average)</option>
+            <option value="2">★★☆☆☆ (2/5 Poor)</option>
+            <option value="1">★☆☆☆☆ (1/5 Very Poor)</option>
+        </select><br><br>
+
+        <label for="photo-upload">Upload Photo of Delivered Flowers:</label><br>
+        <input type="file" id="photo-upload" name="review_photo" accept="image/*"><br><br>
+
+        <label for="review-text">Your Experience:</label><br>
+        <textarea id="review-text" name="review_text" rows="4" required></textarea><br><br>
+
+        <button type="submit">Submit Customer Review</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Always & Forever Blooms. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+
+
