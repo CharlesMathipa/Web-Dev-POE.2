@@ -13,6 +13,8 @@
 #header-section .logo {
     width: 150px;
     height: auto;
+    align-items: left;
+    border-radius: 10px;
 }
 
 #navbar {
