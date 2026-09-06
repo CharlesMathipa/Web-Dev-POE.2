@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 #header-section {
+    display: flex;
+    justify-content: space-between;
   background-color: #f8f8f8;
+    align-items: center;
   padding: 20px;
   text-align: center;
 }
