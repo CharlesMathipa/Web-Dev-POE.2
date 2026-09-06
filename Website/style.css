@@ -29,10 +29,12 @@
 #navbar li a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
-#navbar li a:hover {
-    color: #000;
+#navbar li a:hover,
+#navbar li a:active {
+    color: #bb1010;
 }
