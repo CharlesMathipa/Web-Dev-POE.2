@@ -56,3 +56,10 @@
     bottom: -4px;
     left: 20px;
 }
+
+/*Additional CSS for the hero section*/ 
+
+#hero-section{
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+}
