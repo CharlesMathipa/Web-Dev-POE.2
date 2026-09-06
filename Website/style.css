@@ -24,6 +24,7 @@
 
 #navbar li {
     margin: 0 15px;
+    position: relative;
 }
 
 #navbar li a {
@@ -39,13 +40,14 @@
     color: #030202;
 }
 
-#navbar li a.active::after {
+#navbar li a.active::after
+#navbar li a:hover::after {
     content: '';
     width: 30%;
     height: 2px;
-    background-color: #bb1010;
+    background-color: #fffdfd;
     position: absolute;
-    bottom: -5px;
+    bottom: -4px;
     left: 20px;
-    color: #bb1010;
+    color: #fffdfd;
 }
