@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-header-section {
+#header-section {
     display: flex;
     justify-content: space-between;
     background-color: #35b656;
@@ -8,4 +8,9 @@ header-section {
     padding: 20px 80px;
     text-align: center;
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+#header-section .logo {
+    width: 150px;
+    height: auto;
 }
