@@ -6,70 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Always & Forever Blooms - Cart</title>
+    <title>Always & Forever Blooms - Express Cart</title>
 </head>
-
 <body>
-          <section id ="header-section">
-                <a href="Homepage.html"><img src="images/logo.jpeg" alt="Always and Forever Blooms Logo" class="logo" ></a>
-                  
-                  
-              <div>
-                <ul id="navbar">
-                  <li><a  href="Homepage.html">Home</a></li>
-                  <li><a class="active" href="reviews.html">Reviews</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-                  <li><a href="cart.html"><i class="bi bi-bag"></i></a></li>
-                </ul>
-              </div>
-          </section>
 
-<main>
+  <section id="header-section">
+    <a href="Homepage.html"><img src="images/logo.png" alt="Always and Forever Blooms Logo" class="logo"></a>
+    <ul id="navbar">
+      <li><a href="Homepage.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a class="active" href="cart.html"><i class="bi bi-bag"></i></a></li>
+    </ul>
+  </section>
+
+  <main>
     <form action="checkout.html" method="POST">
-  <h2>Step 1: Recipient Details </h2>
-  
-  <label for="recip-name">Recipient Full Name:</label><br>
-  <input type="text" id="recip-name" name="recipient_name" required><br><br>
+      <section>
+        <h2>Step 1: Recipient Details</h2>
+        <br>
+        <label for="recip-name">Recipient Full Name:</label>
+        <input type="text" id="recip-name" name="recipient_name" required><br><br>
 
-  <label for="recip-phone">Recipient Mobile Phone (For Driver):</label><br>
-  <input type="tel" id="recip-phone" name="recipient_phone" required><br><br>
+        <label for="recip-phone">Recipient Mobile Phone (For Driver):</label>
+        <input type="tel" id="recip-phone" name="recipient_phone" required><br><br>
 
-  <label for="recip-address">Delivery Street Address:</label><br>
-  <textarea id="recip-address" name="recipient_address" rows="3" required></textarea><br><br>
+        <label for="recip-address">Delivery Street Address:</label>
+        <textarea id="recip-address" name="recipient_address" rows="3" required></textarea>
+      </section>
 
-  <h2>Step 2: Personalized Gift Card Note</h2>
-  <label for="card-note">Write your card message (Max 250 characters):</label><br>
-  <textarea id="card-note" name="card_note" maxlength="250" rows="4"></textarea><br>
-  <label><input type="checkbox" name="anonymous_sender"> Keep my name anonymous on the card</label><br><br>
+      <section>
+        <h2>Step 2: Personalized Gift Card Note</h2>
+        <br>
+        <label for="card-note">Write your card message (Max 250 characters):</label>
+        <textarea id="card-note" name="card_note" maxlength="250" rows="4"></textarea><br><br>
+        <label><input type="checkbox" name="anonymous_sender"> Keep my name anonymous on the recipient card</label>
+      </section>
 
-  <h2>Step 3: Buyer Details</h2>
-  <label for="buyer-email">Your Email Address:</label><br>
-  <input type="email" id="buyer-email" name="buyer_email" required><br><br>
+      <section>
+        <h2>Step 3: Buyer Details</h2>
+        <br>
+        <label for="buyer-email">Your Email Address (For Order Tracking):</label>
+        <input type="email" id="buyer-email" name="buyer_email" required><br><br>
 
-  <button type="submit">Proceed to Secure Payment</button>
-</form>
-</main>
+        <button type="submit" style="width: 100%;">Proceed to Secure Payment</button>
+      </section>
+    </form>
+  </main>
 
-<footer>
-    <section>
-      <h3>Always & Forever Blooms</h3>
-      <p>Luxury floral arrangements delivered nationwide.</p>
-    </section>
-    <section>
-      <h3>Customer Care</h3>
-      <ul>
-        <li><a href="faq.html">Delivery Info & FAQ</a></li>
-        <li><a href="faq.html#care">Flower Care Guide</a></li>
-      </ul>
-    </section>
-    <section>
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="reviews.html">Real Photo Gallery</a></li>
-        <li><a href="cart.html">View Cart</a></li>
-      </ul>
-    </section>
+  <footer>
     <p>&copy; 2026 Always & Forever Blooms. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
