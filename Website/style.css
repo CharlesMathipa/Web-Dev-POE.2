@@ -60,7 +60,7 @@
 /*Additional CSS for the hero section*/ 
 
 #hero-section{
-    background-image: url("images/pinkroses hero-background.jfif");
+    background-image: url("images/heroimage.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -83,6 +83,7 @@
 }
 
 #hero button{
+    background-image: url("images/herobutton.png");
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
