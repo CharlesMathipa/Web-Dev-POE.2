@@ -7,148 +7,100 @@ All website functionality will be added in part 2 of the project
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-      <title>Always and Forever Blooms</title>
-  </head>
+    <title>Always & Forever Blooms - Luxury Floral Delivery</title>
+</head>
+<body>
 
-  <body>
+  <section id="header-section">
+    <a href="Homepage.html"><img src="images/logo.jpeg" alt="Always and Forever Blooms Logo" class="logo"></a>
+    <ul id="navbar">
+      <li><a class="active" href="Homepage.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="cart.html"><i class="bi bi-bag"></i></a></li>
+    </ul>
+  </section>
 
-      <section id ="header-section">
-            <a href="Homepage.html"><img src="images/logo.jfif" alt="Always and Forever Blooms Logo" class="logo" ></a>
-              
-              
-          <div>
-            <ul id="navbar">
-              <li><a class="active" href="Homepage.html">Home</a></li>
-              <li><a href="reviews.html">Reviews</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="cart.html"><i class="bi bi-bag"></i></a></li>
-            </ul>
-          </div>
-      </section>
+  <main>
+    <!-- Hero Section -->
+    <section style="text-align: center; padding: 60px 20px;">
+      <h4>Where Every Bloom Tells A Together Story</h4>
+      <h1 style="font-size: 2.8rem; margin: 15px 0;">Fresh Hand-Crafted Luxury Bouquets</h1>
+      <p style="margin-bottom: 25px; color: var(--brand-muted);">Freshly cut stems arranged in signature luxury wraps from R 550.</p>
+      <a href="menu.html" class="button">Explore Flower Menu</a>
+    </section>
 
-        <main>
-            <!-- Main Content Section/ hero section -->
-            <section id="hero-section">
-                <h4>Welcome to Always and Forever Blooms</h4>
-                <h2><em>Your one-stop shop for all your floral needs!</em></h2>
-                <h1>Fresh Hand-Crafted Assorted Rose Bouquets From R750</h1>
-                <P>love them, buy them</P>
-                <a href="menu.html"><button type="button">View Our Menu</button></a>
-            </section>
+    <!-- Suburb Availability Search -->
+    <section>
+      <form action="faq.html" method="GET" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <label for="suburb-search" style="font-weight: 600; flex: 1 1 100%;">Check Same-Day Metro Delivery Availability:</label>
+        <input type="text" id="suburb-search" name="suburb" placeholder="e.g., Sandton / Pretoria East / Centurion" required style="flex: 1;">
+        <button type="submit">Check Availability</button>
+      </form>
+    </section>
 
-                <!-- Quick Delivery & FAQ Info -->
-                <section id="delivery-info">
-                    <form action="faq.html" method="GET">
-                        <label for="suburb-search">Enter Recipient's Suburb or Postal Code:</label>
-                        <input type="text" id="suburb-search" name="suburb" placeholder="e.g., Sandton / 2196" required>
-                        <button type="submit">Check Availability</button>
-                    </form>
-                </section>
-            </section>
-            
-            <section>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>100% Freshness Guarantee</th>
-                            <th>Same-Day Metro Delivery</th>
-                            <th>4.9/5 Customer Rating</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      
-            </section>
-        <div>
-            <section>
-                <table>
-                    <tr>
-                        <th><img src="images/yellowroses.jpeg" alt="Yellow Rose Bouquet" class="product-image" width="300" height="200"></th>
-                        <th><img src="images/lilybouqet.jpeg" alt="Lily Bouquet" class="product-image" width="300" height="200"></th>
-                        <th><img src="images/assortedroses.jpeg" alt="Mixed Bouquet" class="product-image" width="300" height="200"></th>
-                    </tr>
-                </table>
-            </section>
-        </div>
+    <!-- Guarantees Grid -->
+    <section class="grid-3" style="text-align: center;">
+      <div>
+        <h3>100% Freshness Guarantee</h3>
+        <p>Arranged in hydration packs for maximum vase life.</p>
+      </div>
+      <div>
+        <h3>Same-Day Metro Delivery</h3>
+        <p>Order before 12:00 PM for afternoon delivery.</p>
+      </div>
+      <div>
+        <h3>4.9/5 Customer Rating</h3>
+        <p>Over 1,000+ verified order photos delivered.</p>
+      </div>
+    </section>
 
-        <!--- featured products ---->
+    <!-- Featured Products Grid -->
+    <h2 style="margin: 30px 0 15px 0;">Featured Arrangements</h2>
+    <section class="grid-3">
+      <article>
+        <img src="images/red-roses-gyp.jpeg" alt="Red Rose Bouquet with Gypsophila" style="height: 250px;">
+        <h3 style="margin-top: 15px;">Red Rose Bouquet</h3>
+        <p>★★★★★ (62 Reviews)</p>
+        <p><strong>From R 550</strong></p>
+        <a href="product=redroses.html" class="button" style="width: 100%; margin-top: 10px;">Select Stem Size</a>
+      </article>
 
-        <div>
-            <section>
-                <h2>Featured Arrangements</h2>
+      <article>
+        <img src="images/assorted-pink-roses.jpeg" alt="Assorted Pink Roses" style="height: 250px;">
+        <h3 style="margin-top: 15px;">Assorted Rose Bouquet</h3>
+        <p>★★★★★ (48 Reviews)</p>
+        <p><strong>From R 550</strong></p>
+        <a href="product=pinkroses.html" class="button" style="width: 100%; margin-top: 10px;">Select Stem Size</a>
+      </article>
 
-              <!-- Product 1: Pink Roses -->
-              <article>
-                <img src="images/pinkroses.jpeg" alt="Pink Rose Assorted Bouquet" width="300" height="200">
-                <h3>Pink Rose Assorted Bouquet</h3>
-                <p>★★★★★ (48 Reviews)</p>
-                <p>From R750</p>
-                <a href="product=pinkroses.html">Select Stem Size</a>
-              </article></th>
+      <article>
+        <img src="images/white-roses.jpeg" alt="White Rose Bouquet" style="height: 250px;">
+        <h3 style="margin-top: 15px;">White Rose Bouquet</h3>
+        <p>★★★★★ (31 Reviews)</p>
+        <p><strong>From R 550</strong></p>
+        <a href="product=whiteroses.html" class="button" style="width: 100%; margin-top: 10px;">Select Stem Size</a>
+      </article>
+    </section>
+  </main>
 
-              <!-- Product 2: Red Roses -->
-              <article>
-                <img src="images/Roses.jpeg" alt="Red Rose Assorted Bouquet" width="300" height="200">
-                <h3>Red Rose Assorted Bouquet</h3>
-                <p>★★★★★ (62 Reviews)</p>
-                <p>From R1,100</p>
-                <a href="product=redroses.html">Select Stem Size</a>
-              </article>
+  <footer>
+    <section>
+      <h3>Always & Forever Blooms</h3>
+      <p>Luxury floral arrangements delivered nationwide.</p>
+    </section>
+    <section>
+      <h3>Customer Care</h3>
+      <p>WhatsApp: <a href="https://wa.me/27610667057">061 066 7057</a></p>
+    </section>
+    <p>&copy; 2026 Always & Forever Blooms. All rights reserved.</p>
+  </footer>
 
-              <!-- Product  3: White Roses -->
-              <article>
-                <img src="images/whiteroses.jpeg" alt="White Rose Assorted Bouquet" width="300" height="200">
-                <h3>White Rose Assorted Bouquet</h3>
-                <p>★★★★★ (31 Reviews)</p>
-                <p>From R750</p>
-                <a href="product=whiteroses.html">Select Stem Size</a>
-              </article>
-
-              <article>
-                <p><a href="menu.html">See more arrangements</a></p>
-              </article>
-
-            </section>
-        </div>
-
-            <!-- Real Photo Gallery Preview -->
-            <section>
-              <h2>Real Moments, Real Roses</h2>
-              <p>See real 60-stem and 100-stem bouquets delivered to happy recipients.</p>
-              
-              <figure>
-                <img src="images/rednwhiteroses.jpeg" alt="100-stem Red Rose Arrangement" width="500" height="300">
-                <figcaption>"Massive & fresh!" — Lerato M.</figcaption>
-              </figure>
-
-              <a href="reviews.html">View All Photo Reviews & Gallery</a>
-            </section>
-        </main>
-
-        <footer>
-            <section>
-              <h3>Always & Forever Blooms</h3>
-              <p>Luxury floral arrangements delivered nationwide.</p>
-            </section>
-            <section>
-              <h3>Customer Care</h3>
-              <ul>
-                <li><a href="faq.html">Delivery Info & FAQ</a></li>
-                <li><a href="faq.html#care">Flower Care Guide</a></li>
-              </ul>
-            </section>
-            <section>
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="reviews.html">Real Photo Gallery</a></li>
-                <li><a href="cart.html">View Cart</a></li>
-              </ul>
-            </section>
-            <p>&copy; 2026 Always & Forever Blooms. All rights reserved.</p>
-          </footer>
-  </body>
+</body>
 </html>
