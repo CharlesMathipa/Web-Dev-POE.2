@@ -1,100 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-surface: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  --glass-blur: blur(30px) saturate(210%);
+  
+  --brand-rose: #d63384;
+  --brand-dark: #1f1f23;
+  --brand-muted: #6e6e73;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 200, 220, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(220, 210, 255, 0.45) 0%, transparent 45%),
+    linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background-attachment: fixed;
+  color: var(--brand-dark);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* Floating Glass Header Navigation */
 #header-section {
-    display: flex;
-    justify-content: space-between;
-    background-color: #99658c;
-    align-items: center;
-    padding: 20px 80px;
-    text-align: center;
-    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.06);
-    border-bottom: 1px solid #ccc;
-    /*border-radius: 10px;*/
+  position: sticky;
+  top: 20px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 28px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 99px;
+  box-shadow: var(--glass-shadow);
 }
 
 #header-section .logo {
-    width: 150px;
-    height: auto;
-    align-items: left;
-    border-radius: 10px;
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 
 #navbar {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-#navbar li {
-    padding: 0 20px;
-    position: relative;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 #navbar li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--brand-dark);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 #navbar li a:hover,
-#navbar li a:active {
-    color: #030202;
+#navbar li a.active {
+  background: var(--glass-highlight);
+  color: var(--brand-rose);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-#navbar li a.active::after,
-#navbar li a:hover::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #fffdfd;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
+/* Container & Cards */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/*Additional CSS for the hero section*/ 
-
-#hero-section{
-    background-image: url("images/heroimage.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    background-position: top 25% right 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 80px;
-    flex-direction: column;
+.glass-card, section, article {
+  background: var(--glass-surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-#hero-section h4{
-    padding-bottom: 15px;
-    font-size: 20px;
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
-#hero-section h1{
-    color: rgb(189, 54, 137);
+/* Grid Layouts */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-#hero button{
-    background-image: url("images/herobutton.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #18ce73;
-    border: 0;
-    padding: 14px 80px 14px 65px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 24px;
 }
 
-#hero button:hover{
-    background-color: #7a4d6f;
+/* Forms & Glass Inputs */
+input, select, textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  font-size: 15px;
+  color: var(--brand-dark);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--brand-rose);
+  box-shadow: 0 0 0 4px rgba(214, 51, 132, 0.15);
+}
+
+fieldset {
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 8px;
+  color: var(--brand-dark);
+}
+
+/* Apple Liquid Glossy Buttons */
+button, .button {
+  background: linear-gradient(135deg, #e64980 0%, #d63384 100%);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+button:hover, .button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(214, 51, 132, 0.4);
+}
+
+/* Media Gallery & Images */
+img {
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Glass Details Accordion */
+details {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border: 1px solid var(--glass-border);
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Glass Footer */
+footer {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  padding: 32px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
