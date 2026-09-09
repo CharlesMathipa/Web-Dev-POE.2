@@ -8,7 +8,7 @@
   --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
   --glass-blur: blur(30px) saturate(210%);
   
-  --brand-rose: #3aa348;
+  --brand-rose: #fdf0f2;
   --brand-dark: #1f1f23;
   --brand-muted: #6e6e73;
 }
@@ -155,7 +155,7 @@ legend {
 
 /* Apple Liquid Glossy Buttons */
 button, .button {
-  background: linear-gradient(135deg, #e64980 0%, #d63384 100%);
+  background: linear-gradient(135deg, #9E1B22 0%, #d63384 100%);
   color: #ffffff;
   border: none;
   padding: 14px 28px;
