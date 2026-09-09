@@ -77,7 +77,7 @@ body {
 
 #navbar li a:hover,
 #navbar li a.active {
-  background: var(--glass-highlight);
+  background: #d48b99;
   color: var(--brand-rose);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -155,8 +155,8 @@ legend {
 
 /* Apple Liquid Glossy Buttons */
 button, .button {
-  background: linear-gradient(135deg, #9E1B22 0%, #9E1B22 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #d48b99 0%, #d48b99 100%);
+  color: #fafafa;
   border: none;
   padding: 14px 28px;
   border-radius: 16px;
@@ -211,4 +211,48 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+/* Frosted pill styling */
+.filter-pill {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a4a4a;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(220, 210, 215, 0.6);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+/* Hover interaction */
+.filter-pill:hover {
+  color: #2c2c2c;
+  background: rgba(253, 242, 244, 0.9);
+  border-color: #f2c6d0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(242, 198, 208, 0.25);
+}
+
+/* Selected state */
+.filter-pill.active {
+  color: #ffffff;
+  background: #d48b99;
+  border-color: #d48b99;
+  box-shadow: 0 4px 12px rgba(212, 139, 153, 0.35);
 }
