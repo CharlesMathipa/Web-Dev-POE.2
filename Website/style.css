@@ -21,6 +21,28 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw + 1rem, 3.5rem);
+}
+
+section {
+  padding: clamp(2rem, 5vw, 5rem) 1rem;
+}
+
 body {
   background: 
     radial-gradient(circle at 10% 20%, rgba(255, 200, 220, 0.5) 0%, transparent 40%),
@@ -35,7 +57,7 @@ body {
 /* Floating Glass Header Navigation */
 #header-section {
   position: sticky;
-  top: 20px;
+  top: 2%;
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
@@ -176,7 +198,7 @@ button:hover, .button:hover {
 }
 
 /* Media Gallery & Images */
-img {
+img, video, svg {
   border-radius: 16px;
   width: 100%;
   height: auto;
