@@ -83,7 +83,7 @@ body {
 #navbar {
   list-style: none;
   display: flex;
-  gap: 12px;
+  gap: 1%;
   align-items: center;
 }
 
