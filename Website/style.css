@@ -401,3 +401,13 @@ select#rating option {
     object-fit: cover;
   }
 }
+
+main a {
+  color: #9E1B22;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+main a:hover {
+  color: #d48b99; 
+}
