@@ -336,3 +336,8 @@ h1{
     transform: translateX(-50%);
   }
 }
+
+select#rating,
+select#rating option {
+  color: #D4AF37;
+}
