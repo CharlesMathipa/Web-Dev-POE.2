@@ -141,6 +141,7 @@ article:hover {
   gap: 24px;
 }
 
+
 .grid-2 article img,
 .grid-3 article img {
   height: 220px;
@@ -340,4 +341,63 @@ h1{
 select#rating,
 select#rating option {
   color: #D4AF37;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  main {
+    padding: 0 12px;
+    margin: 20px auto;
+  }
+
+ 
+  #header-section {
+    width: 95%;
+    padding: 8px 12px;
+    top: 1%;
+  }
+
+  #header-section .logo {
+    height: 32px; 
+  }
+
+  #navbar {
+    gap: 2px;
+  }
+
+  #navbar li a {
+    padding: 6px 8px; 
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 1.8rem !important; 
+    line-height: 1.2;
+  }
+
+  .grid-2, 
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .glass-card, 
+  section, 
+  article {
+    padding: 16px; 
+  }
+
+  
+  .grid-2 article img,
+  .grid-3 article img,
+  article img {
+    height: 200px !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
 }
