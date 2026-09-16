@@ -54,7 +54,7 @@ body {
   padding-bottom: 40px;
 }
 
-/* Floating Glass Header Navigation */
+
 #header-section {
   position: sticky;
   top: 2%;
@@ -104,7 +104,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Container & Cards */
+
 main {
   max-width: 1100px;
   margin: 40px auto;
@@ -128,7 +128,7 @@ article:hover {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* Grid Layouts */
+
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -197,7 +197,7 @@ button:hover, .button:hover {
   box-shadow: 0 12px 28px rgba(214, 51, 132, 0.4);
 }
 
-/* Media Gallery & Images */
+
 img, video, svg {
   border-radius: 16px;
   width: 100%;
@@ -205,7 +205,7 @@ img, video, svg {
   object-fit: cover;
 }
 
-/* Glass Details Accordion */
+
 details {
   background: rgba(255, 255, 255, 0.3);
   border-radius: 14px;
@@ -224,7 +224,7 @@ footer {
   max-width: 1100px;
   margin: 40px auto 0 auto;
   padding: 32px;
-  background: rgba(94, 112, 96, 0.35); /* Sage Green #5E7060 glass tint */
+  background: rgba(94, 112, 96, 0.35); 
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -235,7 +235,7 @@ footer {
   color: #1f1f23;
 }
 
-/* Optional: ensures footer links stay readable over the green tint */
+
 footer a {
   color: var(--brand-dark);
   transition: color 0.2s ease;
@@ -254,7 +254,7 @@ footer a:hover {
   margin: 16px 0;
 }
 
-/* Frosted pill styling */
+
 .filter-pill {
   display: inline-block;
   padding: 8px 18px;
@@ -272,7 +272,7 @@ footer a:hover {
   cursor: pointer;
 }
 
-/* Hover interaction */
+
 .filter-pill:hover {
   color: #2c2c2c;
   background: rgba(253, 242, 244, 0.9);
@@ -281,7 +281,7 @@ footer a:hover {
   box-shadow: 0 4px 12px rgba(242, 198, 208, 0.25);
 }
 
-/* Selected state */
+
 .filter-pill.active {
   color: #ffffff;
   background: #d48b99;
@@ -295,4 +295,36 @@ h1{
 
 .stars {
   color: #D4AF37;
+}
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: loopRightToLeft 20s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused; 
+}
+
+.marquee-track article {
+  width: 320px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+@keyframes loopRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); 
+  }
 }
