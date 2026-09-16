@@ -304,20 +304,22 @@ h1{
 }
 
 .marquee-track {
-  display: flex;
-  gap: 20px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   width: max-content;
+  gap: 20px;
   animation: loopRightToLeft 20s linear infinite;
 }
 
 .marquee-track:hover {
-  animation-play-state: paused; 
+  animation-play-state: paused;
 }
 
 .marquee-track article {
-  width: 320px;
-  flex-shrink: 0;
-  margin-bottom: 0;
+  width: 320px !important;
+  flex-shrink: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 @keyframes loopRightToLeft {
@@ -325,6 +327,6 @@ h1{
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
   }
 }
