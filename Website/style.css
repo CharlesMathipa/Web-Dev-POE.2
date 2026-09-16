@@ -141,6 +141,12 @@ article:hover {
   gap: 24px;
 }
 
+.grid-2 article img,
+.grid-3 article img {
+  height: 220px;
+  object-fit: cover;
+}
+
 /* Forms & Glass Inputs */
 input, select, textarea {
   width: 100%;
