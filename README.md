@@ -3,6 +3,9 @@ A continuation of the website from part 1, inserting CSS
 
 Project: Web Dev for Always and Forever Blooms Website ST10511987, Neo Charles Mathipa, DISD1 Group 6
 
+github account(my repository link is right in the profile)
+
+[text](https://github.com/CharlesMathipa)
 =================================================================================================
 
 *Website Goals and Objectives: We strive to reach more customers through this website since not everybody uses Instagram and as we all know everybody has got a google on their devices and by the use of the website we can all people to pay directly through it which secures payments by reducing the risk factors of paying into the wrong bank account.
