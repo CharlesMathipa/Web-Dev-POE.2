@@ -11,6 +11,7 @@
   --brand-rose: #fdf0f2;
   --brand-dark: #1f1f23;
   --brand-muted: #6e6e73;
+  --brand-price: #c43e44;
 }
 
 *, *::before, *::after {
@@ -114,7 +115,7 @@ body {
 
 #navbar li a:hover,
 #navbar li a.active {
-  background: #ca5069;
+  background: var(--brand-price);
   color: var(--brand-rose);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -199,7 +200,7 @@ legend {
 
 /* Apple Liquid Glossy Buttons */
 button, .button {
-  background: linear-gradient(135deg, #d48b99 0%, #d48b99 100%);
+  background: linear-gradient(135deg, var(--brand-price) 0%, var(--brand-price) 100%);
   color: #fafafa;
   border: none;
   padding: 14px 28px;
