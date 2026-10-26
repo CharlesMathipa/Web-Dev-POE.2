@@ -32,7 +32,7 @@ img, picture, video, canvas {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cormorant Garamond, 'Plus Jakarta Sans', Alex Brush;
+  font-family: Cormorant Garamond, 'Cormorant Garamond', Alex Brush;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -481,14 +481,14 @@ main {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif; 
+  font-family: 'Cormorant Garamond', sans-serif; 
   line-height: 1.6;
   letter-spacing: -0.01em;
   color: var(--brand-dark);
 }
 
 h1, h2, h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   letter-spacing: -0.02em;
 }
 
