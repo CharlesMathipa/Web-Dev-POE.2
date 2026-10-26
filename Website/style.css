@@ -12,6 +12,7 @@
   --brand-dark: #1f1f23;
   --brand-muted: #6e6e73;
   --brand-price: #2b0f11;
+  --button-colour: #d48b99;
 }
 
 /* =================- Base & Reset ================= */
@@ -258,7 +259,7 @@ legend {
 
 /* ================= Buttons & Links ================= */
 button, .button {
-  background: linear-gradient(135deg, var(--brand-price) 0%, var(--brand-price) 100%);
+  background: linear-gradient(135deg, var(--button-colour) 0%, var(--button-colour) 100%);
   color: #fafafa;
   border: none;
   padding: 14px 28px;
