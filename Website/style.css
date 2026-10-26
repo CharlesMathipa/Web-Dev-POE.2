@@ -491,3 +491,12 @@ h1, h2, h3 {
   font-family: 'Plus Jakarta Sans', serif;
   letter-spacing: -0.02em;
 }
+
+button:active, .button:active {
+  transform: scale(0.98);
+}
+
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--brand-rose);
+  outline-offset: 2px;
+}
