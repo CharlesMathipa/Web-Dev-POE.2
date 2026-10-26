@@ -467,3 +467,10 @@ main {
   max-width: 550px;
   margin: 0 auto 28px auto;
 }
+
+.suburb-search-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
