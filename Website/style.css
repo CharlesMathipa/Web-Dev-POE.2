@@ -481,14 +481,14 @@ main {
 }
 
 body {
-  font-family: 'Cormorant Garamond', sans-serif; 
+  font-family: 'Cormorant Garamond', Alex Brush; 
   line-height: 1.6;
   letter-spacing: -0.01em;
   color: var(--brand-dark);
 }
 
 h1, h2, h3 {
-  font-family: 'Cormorant Garamond', sans-serif;
+  font-family: 'Cormorant Garamond', Alex Brush;
   letter-spacing: -0.02em;
 }
 
