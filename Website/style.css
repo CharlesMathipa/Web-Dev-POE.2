@@ -68,6 +68,11 @@ section {
   padding: clamp(2rem, 5vw, 5rem) 1rem;
 }
 
+.product-price {
+  color: var(--brand-dark); 
+  margin-bottom: 20px;
+}
+
 /* ================= Layout & Grids ================= */
 .container {
   width: 100%;
