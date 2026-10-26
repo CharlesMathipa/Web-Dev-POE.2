@@ -474,3 +474,15 @@ main {
   align-items: center;
   flex-wrap: wrap;
 }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif; 
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: var(--brand-dark);
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: -0.02em;
+}
