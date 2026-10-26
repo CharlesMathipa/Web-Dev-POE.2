@@ -99,6 +99,16 @@ section {
   height: 220px;
 }
 
+.grid-3 article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.grid-3 article .button {
+  margin-top: auto; 
+}
+
 /* ================= Header & Navigation ================= */
 #header-section {
   position: sticky;
