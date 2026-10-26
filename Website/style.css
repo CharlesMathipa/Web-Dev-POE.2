@@ -156,7 +156,7 @@ section {
 
 #navbar li a:hover,
 #navbar li a.active {
-  background: var(--brand-price);
+  background: var(--button-colour);
   color: var(--brand-rose);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
