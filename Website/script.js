@@ -1,85 +1,140 @@
+/* 
+   ALWAYS & FOREVER BLOOMS - COMPLETE FUNCTIONALITY (PART 3)
+   */
+
 document.addEventListener("DOMContentLoaded", () => {
-  
-  // 1. DYNAMIC SUBURB & DELIVERY FEE LOOKUP (Used in faq.html & Homepage.html)
-  const suburbForm = document.querySelector("form[action='faq.html']") || document.querySelector("form[action='faq.html?']");
-  
-  if (suburbForm) {
-    suburbForm.addEventListener("submit", (e) => {
+
+  /*
+     1. DYNAMIC SHOPPING CART & STEM PRICING CALCULATION
+    */
+  const productForm = document.querySelector("form[action='cart.html']");
+  if (productForm) {
+    const stemRadios = productForm.querySelectorAll("input[name='stem_count']");
+    const gypCheckbox = productForm.querySelector("input[name='addon_gyp']");
+    const vaseCheckbox = productForm.querySelector("input[name='addon_vase']");
+    const priceDisplay = document.querySelector(".product-price") || document.querySelector("h2[style*='color']");
+
+    const calculatePrice = () => {
+      let basePrice = 550;
+      let selectedStems = 20;
+
+      stemRadios.forEach(radio => {
+        if (radio.checked) {
+          selectedStems = parseInt(radio.value);
+          // Pricing scale based on stem count
+          basePrice = 550 + ((selectedStems - 20) / 20) * 300;
+        }
+      });
+
+      if (gypCheckbox && gypCheckbox.checked) {
+        basePrice += (selectedStems / 20) * 200;
+      }
+      if (vaseCheckbox && vaseCheckbox.checked) {
+        basePrice += 150;
+      }
+
+      if (priceDisplay) {
+        priceDisplay.textContent = `R ${basePrice.toLocaleString('en-ZA', { minimumFractionDigits: 2 })}`;
+      }
+    };
+
+    stemRadios.forEach(r => r.addEventListener("change", calculatePrice));
+    if (gypCheckbox) gypCheckbox.addEventListener("change", calculatePrice);
+    if (vaseCheckbox) vaseCheckbox.addEventListener("change", calculatePrice);
+  }
+
+  /* 
+     2. DYNAMIC CONTENT FILTERING (Menu & Reviews)
+     */
+  const filterPills = document.querySelectorAll(".filter-pill");
+  const reviewArticles = document.querySelectorAll(".grid-2 article, .grid-3 article");
+
+  filterPills.forEach(pill => {
+    pill.addEventListener("click", (e) => {
       e.preventDefault();
-      const inputField = suburbForm.querySelector("input[type='text']");
-      if (!inputField) return;
-      
-      const suburbQuery = inputField.value.trim().toLowerCase();
-      if (!suburbQuery) return;
+      filterPills.forEach(p => p.classList.remove("active"));
+      pill.classList.add("active");
 
-      // Major metropolitan zones for same-day delivery
-      const majorMetros = ["sandton", "pretoria", "centurion", "johannesburg", "midrand", "pretoria east", "centurion"];
-      const isMetro = majorMetros.some(metro => suburbQuery.includes(metro));
+      const category = pill.getAttribute("href").replace("#", "").toLowerCase();
 
-      // Create or update results box dynamically
-      let resultBox = suburbForm.querySelector(".lookup-result");
+      reviewArticles.forEach(article => {
+        const text = article.textContent.toLowerCase();
+        if (category === "all" || text.includes(category.replace("-", " "))) {
+          article.style.display = "block";
+        } else {
+          article.style.display = "none";
+        }
+      });
+    });
+  });
+
+  /* 
+     3. DYNAMIC SUBURB & DELIVERY FEE LOOKUP (FAQ & Homepage)
+  */
+  const suburbForms = document.querySelectorAll("form[action='faq.html'], form[action='faq.html?']");
+  suburbForms.forEach(form => {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const input = form.querySelector("input[type='text']");
+      if (!input || !input.value.trim()) return;
+
+      const query = input.value.trim().toLowerCase();
+      const metros = ["sandton", "pretoria", "centurion", "midrand", "johannesburg", "rosebank", "mamelodi", "hatfield"];
+      const isMetro = metros.some(m => query.includes(m));
+
+      let resultBox = form.querySelector(".lookup-result");
       if (!resultBox) {
         resultBox = document.createElement("div");
         resultBox.className = "lookup-result";
         resultBox.style.cssText = "margin-top: 15px; padding: 14px 18px; border-radius: 14px; font-size: 14px;";
-        suburbForm.appendChild(resultBox);
+        form.appendChild(resultBox);
       }
 
       if (isMetro) {
         resultBox.style.background = "rgba(94, 112, 96, 0.2)";
         resultBox.style.color = "#1f1f23";
-        resultBox.style.border = "1px solid rgba(94, 112, 96, 0.4)";
-        resultBox.innerHTML = `<strong>✓ Delivery Available:</strong> Standard same-day metro delivery fee for <em>"${inputField.value}"</em> is <strong>R 120.00</strong> (Orders before 12:00 PM).`;
+        resultBox.innerHTML = `<strong>✓ Metro Zone Confirmed:</strong> Same-day delivery fee for <em>"${input.value}"</em> is <strong>R 120.00</strong>.`;
       } else {
         resultBox.style.background = "rgba(158, 27, 34, 0.1)";
         resultBox.style.color = "#9E1B22";
-        resultBox.style.border = "1px solid rgba(158, 27, 34, 0.3)";
-        resultBox.innerHTML = `<strong>ℹ Outlying Region:</strong> Special courier required for <em>"${inputField.value}"</em>. Estimated fee: <strong>R 200.00 - R 250.00</strong>.`;
-      }
-    });
-  }
-
-  // 2. CLIENT-SIDE FORM VALIDATION (Phone number & required fields)
-  const forms = document.querySelectorAll("form");
-  forms.forEach(form => {
-    form.addEventListener("submit", (e) => {
-      const phoneInput = form.querySelector("input[type='tel']");
-      
-      if (phoneInput) {
-        const phoneVal = phoneInput.value.trim();
-        // Regex for South African mobile numbers (e.g. 0610667057 or +27610667057)
-        const saPhoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
-        
-        if (!saPhoneRegex.test(phoneVal)) {
-          e.preventDefault();
-          alert("Please enter a valid South African mobile number (e.g., 0610667057).");
-          phoneInput.focus();
-          phoneInput.style.borderColor = "#9E1B22";
-        }
+        resultBox.innerHTML = `<strong>ℹ Outlying Regional Zone:</strong> Special courier rate for <em>"${input.value}"</em> is <strong>R 220.00</strong>.`;
       }
     });
   });
 
-  // 3. IMAGE LIGHTBOX FOR REVIEWS & PRODUCT GALLERIES
-  const galleryImages = document.querySelectorAll("article img, .grid-2 img, .grid-3 img");
-  
-  if (galleryImages.length > 0) {
-    // Build lightbox overlay dynamically
+  /* 
+     4. CONTACT FORM EMAIL COMPILATION (Mailto Handler)
+   */
+  const contactForm = document.querySelector("#contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = contactForm.querySelector("#contact-name").value;
+      const email = contactForm.querySelector("#contact-email").value;
+      const subjectType = contactForm.querySelector("#contact-subject").value;
+      const message = contactForm.querySelector("#contact-message").value;
+
+      const mailtoLink = `mailto:support@alwaysforeverblooms.co.za?subject=${encodeURIComponent(subjectType + " - " + name)}&body=${encodeURIComponent("From: " + name + " (" + email + ")\n\n" + message)}`;
+      window.location.href = mailtoLink;
+    });
+  }
+
+  /*
+     5. IMAGE LIGHTBOX FOR REVIEWS GALLERY
+  */
+  const galleryImgs = document.querySelectorAll(".grid-2 article img, .grid-3 article img");
+  if (galleryImgs.length > 0) {
     const lightbox = document.createElement("div");
     lightbox.id = "image-lightbox";
-    lightbox.style.cssText = `
-      display: none; position: fixed; z-index: 9999; top: 0; left: 0;
-      width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85);
-      justify-content: center; align-items: center; cursor: pointer;
-    `;
+    lightbox.style.cssText = "display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; cursor:pointer;";
     
     const lightboxImg = document.createElement("img");
-    lightboxImg.style.cssText = "max-width: 90%; max-height: 85vh; border-radius: 16px; object-fit: contain; box-shadow: 0 20px 40px rgba(0,0,0,0.5);";
-    
+    lightboxImg.style.cssText = "max-width:90%; max-height:85vh; border-radius:16px; object-fit:contain;";
     lightbox.appendChild(lightboxImg);
     document.body.appendChild(lightbox);
 
-    galleryImages.forEach(img => {
+    galleryImgs.forEach(img => {
       img.style.cursor = "pointer";
       img.addEventListener("click", () => {
         lightboxImg.src = img.src;
