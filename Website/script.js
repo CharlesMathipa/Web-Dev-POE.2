@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /*
-   DYNAMIC CUSTOMER REVIEW SUBMISSION BLOCKS
+   6. DYNAMIC CUSTOMER REVIEW SUBMISSION BLOCKS
    */
 const reviewForm = document.querySelector("#review-form");
 
@@ -156,7 +156,6 @@ if (reviewForm) {
   reviewForm.addEventListener("submit", (e) => {
     e.preventDefault(); // Stop page from reloading
 
-    //Captures Form Inputs
     const nameInput = document.querySelector("#reviewer-name");
     const ratingSelect = document.querySelector("#rating");
     const fileInput = document.querySelector("#photo-upload");
@@ -166,13 +165,11 @@ if (reviewForm) {
     const ratingNum = parseInt(ratingSelect.value);
     const reviewText = textInput.value.trim();
 
-    // Generate star string based on rating value
     const stars = "★".repeat(ratingNum) + "☆".repeat(5 - ratingNum);
 
-    //Handles Photo Upload (or fallback image if none selected)
-    let imageUrl = "images/pinkroses.jpeg"; // Fallback placeholder
+    let imageUrl = "images/pinkroses.jpeg";
     if (fileInput.files && fileInput.files[0]) {
-      imageUrl = URL.createObjectURL(fileInput.files[0]); // Creates a temporary browser preview URL
+      imageUrl = URL.createObjectURL(fileInput.files[0]); 
     }
 
     // Finds the Target Review Container
