@@ -147,4 +147,69 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /*
+   DYNAMIC CUSTOMER REVIEW SUBMISSION BLOCKS
+   */
+const reviewForm = document.querySelector("#review-form");
+
+if (reviewForm) {
+  reviewForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Stop page from reloading
+
+    //Captures Form Inputs
+    const nameInput = document.querySelector("#reviewer-name");
+    const ratingSelect = document.querySelector("#rating");
+    const fileInput = document.querySelector("#photo-upload");
+    const textInput = document.querySelector("#review-text");
+
+    const name = nameInput.value.trim();
+    const ratingNum = parseInt(ratingSelect.value);
+    const reviewText = textInput.value.trim();
+
+    // Generate star string based on rating value
+    const stars = "★".repeat(ratingNum) + "☆".repeat(5 - ratingNum);
+
+    //Handles Photo Upload (or fallback image if none selected)
+    let imageUrl = "images/pinkroses.jpeg"; // Fallback placeholder
+    if (fileInput.files && fileInput.files[0]) {
+      imageUrl = URL.createObjectURL(fileInput.files[0]); // Creates a temporary browser preview URL
+    }
+
+    // Finds the Target Review Container
+    const reviewContainer = document.querySelector("section.grid-2");
+
+    if (reviewContainer) {
+      //Creates the New Review Article Card
+      const newCard = document.createElement("article");
+      newCard.className = "review-card";
+
+      newCard.innerHTML = `
+        <div class="review-card-content">
+          <img src="${imageUrl}" alt="Customer Uploaded Photo" class="review-img">
+          
+          <div class="review-details">
+            <h3><span class="stars">${stars}</span> "${reviewText.substring(0, 30)}..."</h3>
+            <p class="review-quote"><em>"${reviewText}"</em></p>
+            <p class="reviewer-info"><strong>- ${name}</strong> (Verified Buyer)</p>
+            <a href="menu.html" class="button review-btn">Order From Menu</a>
+          </div>
+        </div>
+      `;
+
+      //this prepends New Review to the Top of the Gallery
+      reviewContainer.prepend(newCard);
+
+      //this re-attaches the lightbox Click Listener to the new image
+      const newImg = newCard.querySelector("img");
+      if (newImg && typeof setupLightbox === "function") {
+        setupLightbox(newImg);
+      }
+
+      //This resets the form & shows Success Feedback
+      reviewForm.reset();
+      alert("Thank you! Your review and photo have been posted successfully.");
+    }
+  });
+}
+
 });
