@@ -209,4 +209,129 @@ if (reviewForm) {
   });
 }
 
+/*
+   INTERACTIVE USER AUTHENTICATION & DASHBOARD 
+  */
+const tabSignIn = document.querySelector("#tab-signin");
+const tabRegister = document.querySelector("#tab-register");
+const signInForm = document.querySelector("#signin-form");
+const registerForm = document.querySelector("#register-form");
+const authMsg = document.querySelector("#auth-msg");
+
+const userDashboard = document.querySelector("#user-dashboard");
+const authContainer = document.querySelector("#auth-container");
+const logoutBtn = document.querySelector("#logout-btn");
+
+function showAuthMsg(text, isError = false) {
+  if (!authMsg) return;
+  authMsg.style.display = "block";
+  authMsg.style.background = isError ? "rgba(158, 27, 34, 0.15)" : "rgba(94, 112, 96, 0.2)";
+  authMsg.style.color = isError ? "#9E1B22" : "#1f1f23";
+  authMsg.style.border = isError ? "1px solid rgba(158, 27, 34, 0.3)" : "1px solid rgba(94, 112, 96, 0.4)";
+  authMsg.innerHTML = text;
+}
+
+if (tabSignIn && tabRegister) {
+  tabSignIn.addEventListener("click", () => {
+    tabSignIn.classList.add("active-tab");
+    tabRegister.classList.remove("active-tab");
+    signInForm.style.display = "block";
+    registerForm.style.display = "none";
+    authMsg.style.display = "none";
+  });
+
+  tabRegister.addEventListener("click", () => {
+    tabRegister.classList.add("active-tab");
+    tabSignIn.classList.remove("active-tab");
+    registerForm.style.display = "block";
+    signInForm.style.display = "none";
+    authMsg.style.display = "none";
+  });
+}
+
+//Check Login Status
+function checkUserSession() {
+  const activeUser = JSON.parse(localStorage.getItem("afb_active_user"));
+  
+  if (activeUser && userDashboard && authContainer) {
+    authContainer.style.display = "none";
+    userDashboard.style.display = "block";
+    
+    document.querySelector("#dashboard-user-name").textContent = activeUser.name;
+    document.querySelector("#dashboard-user-email").textContent = activeUser.email;
+    document.querySelector("#dashboard-user-phone").textContent = activeUser.phone;
+  }
+}
+checkUserSession();
+
+//Register Account
+if (registerForm) {
+  registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    const name = document.querySelector("#reg-name").value.trim();
+    const email = document.querySelector("#reg-email").value.trim().toLowerCase();
+    const phone = document.querySelector("#reg-phone").value.trim();
+    const password = document.querySelector("#reg-password").value;
+
+    const saPhoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
+    if (!saPhoneRegex.test(phone)) {
+      showAuthMsg("Please enter a valid SA mobile number (e.g. 0610667057).", true);
+      return;
+    }
+
+    const existingUsers = JSON.parse(localStorage.getItem("afb_users") || "[]");
+    
+    if (existingUsers.some(u => u.email === email)) {
+      showAuthMsg("An account with this email already exists. Please sign in.", true);
+      return;
+    }
+
+    // Save User
+    const newUser = { name, email, phone, password };
+    existingUsers.push(newUser);
+    localStorage.setItem("afb_users", JSON.stringify(existingUsers));
+    
+    localStorage.setItem("afb_active_user", JSON.stringify(newUser));
+    showAuthMsg("✓ Account created successfully! Logging you in...", false);
+
+    setTimeout(() => {
+      checkUserSession();
+    }, 1000);
+  });
+}
+
+//Sign In
+if (signInForm) {
+  signInForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = document.querySelector("#signin-email").value.trim().toLowerCase();
+    const password = document.querySelector("#signin-password").value;
+
+    const existingUsers = JSON.parse(localStorage.getItem("afb_users") || "[]");
+    const matchedUser = existingUsers.find(u => u.email === email && u.password === password);
+
+    if (matchedUser) {
+      localStorage.setItem("afb_active_user", JSON.stringify(matchedUser));
+      showAuthMsg("✓ Sign in successful! Redirecting...", false);
+      setTimeout(() => {
+        checkUserSession();
+      }, 800);
+    } else {
+      showAuthMsg("Invalid email or password. Please try again or create a new account.", true);
+    }
+  });
+}
+
+//Sign Out
+if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("afb_active_user");
+    userDashboard.style.display = "none";
+    authContainer.style.display = "block";
+    authMsg.style.display = "none";
+  });
+}
+
 });
